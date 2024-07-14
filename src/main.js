@@ -1,10 +1,10 @@
 const render = function (container, template, place = 'beforeend') {
-    container.insertAdjacentHTML(place, template)
+  container.insertAdjacentHTML(place, template)
 }
 
 const createMainMenu = () => {
-    return (
-        `<section class="control__btn-wrap">
+  return (
+    `<section class="control__btn-wrap">
           <input
             type="radio"
             name="control"
@@ -32,12 +32,12 @@ const createMainMenu = () => {
             >STATISTICS</label
           >
         </section>`
-    );
+  );
 }
 
 const createMainFilter = () => {
-    return (
-        `<section class="main__filter filter container">
+  return (
+    `<section class="main__filter filter container">
         <input
           type="radio"
           id="filter__all"
@@ -96,31 +96,31 @@ const createMainFilter = () => {
           >Archive <span class="filter__archive-count">115</span></label
         >
       </section>`
-    );
+  );
 }
 
 const createMainSort = () => {
-    return (
-        `<section class="board container">
+  return (
+    `<section class="board container">
         <div class="board__filter-list">
           <a href="#" class="board__filter" data-sort-type="default">SORT BY DEFAULT</a>
           <a href="#" class="board__filter" data-sort-type="date-up">SORT BY DATE up</a>
           <a href="#" class="board__filter" data-sort-type="date-down">SORT BY DATE down</a>
         </div>
         </section>`
-    );
+  );
 }
 
 const createBoardTask = () => {
-    return (
-        `<div class="board__tasks">
+  return (
+    `<div class="board__tasks">
         </div>`
-    );
+  );
 }
 
 const createAddTask = () => {
-    return (
-        `<article class="card card--edit card--black">
+  return (
+    `<article class="card card--edit card--black">
             <form class="card__form" method="get">
               <div class="card__inner">
                 <div class="card__color-bar">
@@ -316,12 +316,12 @@ const createAddTask = () => {
               </div>
             </form>
           </article>`
-    );
+  );
 }
 
 const createCardTask = () => {
-    return (
-        `<article class="card card--black">
+  return (
+    `<article class="card card--black">
             <div class="card__form">
               <div class="card__inner">
                 <div class="card__control">
@@ -364,13 +364,13 @@ const createCardTask = () => {
               </div>
             </div>
           </article>`
-    );
+  );
 }
 
 const createBtnLoadMore = () => {
-    return (
-        `<button class="load-more" type="button">load more</button>`
-    );
+  return (
+    `<button class="load-more" type="button">load more</button>`
+  );
 }
 
 const main = document.querySelector('.main');
@@ -383,17 +383,17 @@ render(main, createMainFilter());
 render(main, createMainSort());
 
 //Board TASK
-const boardContainer = document.querySelector('.board.container'); 
+const boardContainer = document.querySelector('.board.container');
 render(boardContainer, createBoardTask());
 
 //Add TASK
-const boardTasks = document.querySelector('.board__tasks'); 
+const boardTasks = document.querySelector('.board__tasks');
 render(boardTasks, createAddTask());
 
 //form TASK
 const COUNT_CARD = 3;
 for (let i = 0; i < COUNT_CARD; i++) {
-    render(boardTasks, createCardTask());
+  render(boardTasks, createCardTask());
 }
 
 
